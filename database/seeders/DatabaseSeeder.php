@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Listing;
+use App\Models\Logs;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
        
         // \app\Models\Listing::factory(20) -> create();
         Listing::factory(20) -> create();
+        
         
     }
 }

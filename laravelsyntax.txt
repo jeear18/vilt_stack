@@ -46,3 +46,8 @@ php artisan migrate:refresh
 TO REFRESH FAKE DATA
 php artisan migrate:refresh --seed
 
+TO RUN TINKER
+composer dumpautoload
+php artisan tinker
+
+
