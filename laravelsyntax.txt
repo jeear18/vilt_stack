@@ -1,3 +1,11 @@
+GIT COMMAND WHEN PUSHING CODE IN REPO
+git init
+git add .
+git commit -m "comment"
+git branch -m main
+git remode add name https://github.com/jeear18/vilt_stack
+git push -u name main
+
 CREATING A CONTROLLER:
 php artisan make:controller ControllerName
 
