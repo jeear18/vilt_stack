@@ -1,0 +1,2 @@
+"No application encryption key has been specified."
+>php artisan key:generate
