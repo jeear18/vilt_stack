@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\Listing;
+use App\Models\Listing;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class ListingController extends Controller
 {
@@ -16,7 +17,9 @@ class ListingController extends Controller
         return inertia(
             'Listing/Index',
         [
+            // 'listings' => FacadesDB::table('listings')->get()
             'listings' => Listing::all()
+            // Listing::all()
             
         ]
     );
