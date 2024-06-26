@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sample_models', function (Blueprint $table) {
-            $table -> tinyText('name');
-            $table -> tinyText('address');
-            $table -> tinyText('purok');
+        Schema::table('games', function (Blueprint $table) {
+            $table -> tinyText('Mobile_Legend');
+            $table -> tinyText('CoD');
+            $table -> tinyText('Wildrift');
         });
     }
 
@@ -23,9 +23,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColumns('sample_models',
-        ['name', 'address', 'purok'
-           
+        Schema::dropColumns('games',
+        ['Mobile_Legend', 'CoD', 'Wildrift'
         ]);
     }
 };

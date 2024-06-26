@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Games>
  */
-class LogsFactory extends Factory
+class GamesFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +18,9 @@ class LogsFactory extends Factory
     {
         return [
             //
-            'hehe' => fake() -> name(),
-            'huhu' => fake() -> name(),
-            
+            'Mobile_Legend' => fake() -> name(),
+            'CoD' => fake() -> name(),
+            'Wildrift' => fake() -> name()
         ];
     }
 }

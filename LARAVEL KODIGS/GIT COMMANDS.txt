@@ -3,7 +3,7 @@ git init
 git add .
 git commit -m "comment"
 git branch -m main
-git remode add name https://github.com/jeear18/vilt_stack
+git remote add name https://github.com/jeear18/vilt_stack
 git push -u name main
 
 TO PULL AN UPDATED CODE COMING FROM REPO
