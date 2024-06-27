@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
 use App\Models\Games;
 use Illuminate\Http\Request;
 
-class GamesController extends Controller
+class GameController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +18,7 @@ class GamesController extends Controller
             'Games/Index',
         [
             // 'listings' => FacadesDB::table('listings')->get()
-            'games' => Games::all()
+            'games' => Game::all()
             // Listing::all()
             
         ]
@@ -43,7 +44,7 @@ class GamesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Games $games)
+    public function show(Game $games)
     {
         return inertia(
             'Games/Show',
