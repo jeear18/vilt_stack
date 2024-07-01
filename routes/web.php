@@ -10,5 +10,12 @@ Route::get('/show', [IndexController::class, 'show']);
 
 Route::get('/about', [IndexController::class, 'about']);
 Route::get('/contact', [IndexController::class, 'contact']);
-Route::resource('listing', ListingController::class)->only(['index', 'show']);
-Route::resource('games', GameController::class)->only(['index', 'show']);
+//----- you can pick what kind of function in the controller
+// Route::resource('listing', ListingController::class)->only(['index', 'show','create','store','edit','update']);
+
+//----  Except
+// Route::resource('listing', ListingController::class)->except(['destroy']);
+
+//------- ALL ACTIONS
+Route::resource('listing', ListingController::class);
+Route::resource('games', GameController::class);

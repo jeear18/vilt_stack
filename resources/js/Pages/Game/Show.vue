@@ -8,8 +8,9 @@
 
 <script setup>  
     import GameList from '../../Components/GameList.vue';
+    
     import Game from '../../Components/GameList.vue';
     defineProps({
-        games: Object,
+        game: Object,
     })
 </script>

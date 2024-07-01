@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Game;
 use App\Models\Games;
 use App\Models\Listing;
 use App\Models\Logs;
@@ -26,7 +27,7 @@ class DatabaseSeeder extends Seeder
        
         // \app\Models\Listing::factory(20) -> create();
          //Listing::factory(20) -> create();
-         Games::factory(20) -> create();
+         Game::factory(20) -> create();
         // $this->call([
         //     GameSeeder::class,
         // ]);

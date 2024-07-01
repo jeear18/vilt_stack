@@ -15,7 +15,7 @@ class GameController extends Controller
     {
         //
         return inertia(
-            'Games/Index',
+            'Game/Index',
         [
             // 'listings' => FacadesDB::table('listings')->get()
             'games' => Game::all()
@@ -30,7 +30,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Game/Create');
     }
 
     /**
@@ -38,18 +38,29 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          Game::create([
+            // ...$request->all(),
+            ...$request->validate([
+                'Mobile_Legend' => 'required',
+                'CoD' => 'required',
+                'Wildrift' => 'required',
+                
+            ])
+            ]);
+        return redirect()->route('games.index')
+        ->with('success', 'Game was created');
+    
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Game $games)
+    public function show(Game $game)
     {
         return inertia(
-            'Games/Show',
+            'Game/Show',
         [
-            'games' => $games
+            'game' => $game
             
         ]
     );
@@ -58,24 +69,43 @@ class GameController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Game $game)
     {
-        //
+        return inertia(
+            'Game/Edit',
+        [
+            'game' => $game
+            
+        ]
+    );
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Game $game)
     {
-        //
+        $game -> update([
+            ...$request->validate([
+                'Mobile_Legend' => 'required',
+                'CoD' => 'required',
+                'Wildrift' => 'required',
+                
+            ])
+            ]);
+        return redirect()->route('games.index')
+        ->with('success', 'Game was changed');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Game $game)
     {
-        //
+        $game -> delete();
+        
+        return redirect()->back()
+        ->with('success','Game was deleted');
     }
+    
 }

@@ -56,3 +56,15 @@ php artisan make:controller --resource ControllerName
 
 TO CREATE ENV FILE(FOR CLONING)
 cp .env.example .env
+
+MAKING MIDDLEWARE
+php artisan make:middleware MiddleWareName
+
+MAKING INERTIA MIDDLEWARE
+php artisan inertia:middleware
+
+TO REFRESH A ROUTE
+php artisan route:clear
+
+TO INSTALL ZIGGY
+composer require tightenco/ziggy  

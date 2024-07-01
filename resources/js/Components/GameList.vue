@@ -1,11 +1,11 @@
 <template>
     <span>
-        {{ games.Mobile_Legend }} {{ games.CoD }}, {{ games.Wildrift }}
+        {{ game.Mobile_Legend }} {{ game.CoD }}, and {{ game.Wildrift }}
     </span>
 </template>
 
 <script setup>  
     defineProps({
-        games: Object,
+        game: Object,
     })
 </script>

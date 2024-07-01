@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Game extends Model
+class SampleModels extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['Mobile_Legend', 'CoD', 'Wildrift'];
+    protected $fillable = ['name', 'address', 'purok' ];
 }
