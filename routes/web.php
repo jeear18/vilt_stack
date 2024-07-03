@@ -19,3 +19,4 @@ Route::get('/contact', [IndexController::class, 'contact']);
 //------- ALL ACTIONS
 Route::resource('listing', ListingController::class);
 Route::resource('games', GameController::class);
+
