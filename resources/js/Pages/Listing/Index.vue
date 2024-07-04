@@ -12,11 +12,11 @@
        <Link :href="route('listing.show', {listing: listing.id})">
             <Price :price="listing.price" class="text-2xl font-bold"/>
             <ListingSpace :listing = "listing" class="text-lg"/>
-            <ListingAdress :listing="listing" class="text-gray-500"/>
+            <ListingAdress :listing="listing" class="text-gray-500"/>   
         </Link>
        <div>
-            <Link :href="route('listing.edit', {listing: listing.id})">
-            Edit</Link>
+            <Link :href="route('listing.edit', {listing: listing.id})" >
+                Edit</Link>                
         </div>
         <div>
             <Link :href="route('listing.destroy', {listing: listing.id})" method="DELETE" as="button">
