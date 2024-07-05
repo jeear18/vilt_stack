@@ -3,21 +3,20 @@
     <div class="container mx-auto">
       <nav class="p-4 flex items-center justify-between">
         <div class="text-lg font-medium">
-          <Link :href="route('listing.index')">Games Page</Link>
+          <Link :href="route('games.index')">Games Page</Link>
         </div>
         <div class="text-xl text-indigo-300 font-bold text-center">
-          <Link :href="route('listing.index')">Comids</Link>
+          <Link :href="route('games.index')">Comids</Link>
         </div>
         <div >
-          <Link :href="route('listing.create')" class="btn-primary">+ New Game</Link>
+          <Link :href="route('games.create')" class="btn-primary">+ New Game</Link>
         </div>
       </nav>
     </div>
     </header>
 
-    <main class="container mx-auto px-4">
+    <main class="container mx-auto px-4 mt-5">
     <div v-if="flashSuccess" class="mb-4 border rounded-md shadow-sm border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900 p-2">
-      <!-- {{ page.props.flash.success }}      -->
         {{ flashSuccess }}
         
     </div>
@@ -28,38 +27,34 @@
             <Link :href="route('games.show', {game: game.id})">
               <HeroName :game="game"  class="text-2xl font-bold"/>
             </Link>
+            <div class="col-span-6 mt-3 ">
+              <Link :href="`/games/${game.id}/edit`"  as="button"  class="btn-primary w-full bg-yellow-600 hover:bg-yellow-500">
+                Edit </Link>
+            
+            </div>
+            <div class="col-span-6 mt-3" >
+                <Link :href="`/games/${game.id}`" method="DELETE"   as="button" class="btn-primary w-full bg-red-600 hover:bg-red-400">Delete </Link>            
+            </div>
         </Box>
     </div>
   </main>
 
-     <div>
-            <Link :href="'games/create'"  as="button">
-            Create Games </Link>
-    </div>
-    <div v-for="game in games" :key="game.id">
-        <Link :href="`/games/${game.id}`">
-            <GameList :game="game"/>         
-        </Link>
-        <div>
-            <Link :href="`/games/${game.id}/edit`"  as="button">
-           Edit </Link>
-        </div>
-        <div>
-            <Link :href="`/games/${game.id}`" method="DELETE"  as="button">
-           Delete </Link>
-        </div>
-           
-    </div>
 </template>
 
 <script setup>
-     import { Link } from '@inertiajs/vue3';
+    import {computed} from 'vue'
+     import { Link, usePage } from '@inertiajs/vue3';
      import GameList from '../../Components/GameList.vue';  
      import Box from '../../Components/UI/Box.vue';
-     import HeroName from '../../Game/Heroname.vue'
+     import HeroName from '../../Pages/Game/HeroName.vue'
+     import { route } from '../../../../vendor/tightenco/ziggy/src/js';
 
 
     defineProps({
         games: Array,
     })
+
+    const page= usePage()
+    const flashSuccess = computed(
+    () => page.props.flash.success,)
 </script>

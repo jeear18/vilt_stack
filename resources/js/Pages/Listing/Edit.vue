@@ -1,4 +1,5 @@
 <template>
+
   <form @submit.prevent="update">
     <div class="grid grid-cols-6 gap-4">
       <div class="col-span-2">
@@ -75,6 +76,7 @@
 <script setup>
   // import {reactive} from 'vue'
   import { useForm } from '@inertiajs/vue3';
+  import { Link, usePage } from '@inertiajs/vue3';
   
  const props = defineProps({
     listing: Object,
