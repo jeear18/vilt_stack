@@ -1,4 +1,9 @@
 npm install -D tailwindcss
 npx tailwindcss init
+npm install -D tailwindcss/forms
 
+        OR THIS
+
+npm install -D tailwindcss postcss autoprefixer
+npm tailwindcss init -p
 npm install -D tailwindcss/forms

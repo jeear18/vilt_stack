@@ -1,14 +1,15 @@
 // import './bootstrap';
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
-import MainLayout from './Layouts/MainLayout.vue'
-// import {ZiggyVue} from '../../vendor/tightenco/ziggy'
+import MainLayout from '@/Layouts/MainLayout.vue'
 import { ZiggyVue } from '../../vendor/tightenco/ziggy'
 import '../css/app.css'
-// import '../../resources/css/app.css'
+// import MainLayout from '@/Layouts/MainLayout.vue'
+
 
 
 createInertiaApp({
+    
   resolve: name => {
     const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
     let page = pages[`./Pages/${name}.vue`]
