@@ -68,3 +68,9 @@ php artisan route:clear
 
 TO INSTALL ZIGGY
 composer require tightenco/ziggy  
+
+TO MAKE POLICY
+php artisan make:policy PolicyName --model=ModelName
+
+TO MAKE PROVIDER
+php artisan make:provider AuthServiceProvider

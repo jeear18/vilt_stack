@@ -26,6 +26,7 @@ class ListingFactory extends Factory
             'street' => fake() -> streetName(),
             'street_nr' => fake() -> numberBetween(10,200),
             'price' => fake() -> numberBetween(50_000,2_000_000),
+            'by_user_id' => 1
         ];
     }
 }

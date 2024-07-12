@@ -91,6 +91,7 @@
     street: props.listing.street,
     street_nr: props.listing.street_nr,
     price: props.listing.price,
+    by_user_id: props.listing.by_user_id,
 
   })
 

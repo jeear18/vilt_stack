@@ -34,18 +34,17 @@
 <script setup>
 
 
-    import { Link } from '@inertiajs/inertia-vue3'
+    // import { Link } from '@inertiajs/inertia-vue3'
+    // ------ USE THIS  IMPORT IF NAAY ERROR NGA RESOLVE COMPONENT IS NOT A FUNCTION    ------
+    import { Link } from '@inertiajs/vue3'
     import ListingAdress from '@/Components/ListingAdress.vue'
     import Box from '@/Components/UI/Box.vue'
     import ListingSpace from '@/Components/UI/ListingSpace.vue'
     import Price from '@/Components/UI/Price.vue'
     import { useMonthlyPayment } from '@/Composables/useMonthlyPayment'
 
-    defineProps({listing: Object})
-//     const { monthlyPayment } = useMonthlyPayment(
-//     props.listing.price, 2.5, 25,
-// )
+    const props =  defineProps({listing: Object})
+    const { monthlyPayment } = useMonthlyPayment(
+    props.listing.price, 2.5, 25,
+)
 </script>
-
-
-

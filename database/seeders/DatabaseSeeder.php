@@ -25,11 +25,30 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
        
-        // \app\Models\Listing::factory(20) -> create();
-         //Listing::factory(20) -> create();
-         Game::factory(20) -> create();
+        // User::factory(2) -> create();
+        //  Listing::factory(10) -> create();
+        //  Game::factory(20) -> create();
         // $this->call([
         //     GameSeeder::class,
+        // ]);
+       
+        // User::factory()->create([
+        //     'name' => 'Test User1',
+        //     'email' => 'test@example1.com',
+        //     'is_admin' => false
+        // ]);
+        // User::factory()->create([
+        //     'name' => 'Test User1',
+        //     'email' => 'test@example3.com',
+        //     'is_admin' => false
+        // ]);
+       
+        \App\Models\Listing::factory(10)->create();
+        Listing::factory(10)->create([
+            'by_user_id' => 3
+        ]);
+        // Listing::factory(10)->create([
+        //     'by_user_id' => 2
         // ]);
         
         

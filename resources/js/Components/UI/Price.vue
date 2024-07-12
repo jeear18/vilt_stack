@@ -10,7 +10,7 @@
   const formattedPrice = computed(
     () => Number(props.price).toLocaleString('en-US', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'PHP',
       maximumFractionDigits: 0,
     }),
   )

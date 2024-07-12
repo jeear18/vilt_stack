@@ -8,9 +8,18 @@
         <div class="text-xl text-indigo-300 font-bold text-center">
           <Link :href="route('games.index')">Comids</Link>
         </div>
-        <div >
+        <div v-if="user" class="flex items-center gap-4">
+          <div class="text-sm text-gray-500">{{ user.name }}</div>
           <Link :href="route('games.create')" class="btn-primary">+ New Game</Link>
+          <div>
+            <Link :href="route('game-logout')" method="delete" as="button">Logout</Link>
+          </div>
         </div>
+        <div v-else class="flex items-center gap-2">
+          <Link :href="route('game-account.create')">Register</Link>
+          <Link :href="route('Login')">Sign-In</Link>
+        </div>
+          
       </nav>
     </div>
     </header>
@@ -44,9 +53,9 @@
 <script setup>
     import {computed} from 'vue'
      import { Link, usePage } from '@inertiajs/vue3';
-     import GameList from '../../Components/GameList.vue';  
-     import Box from '../../Components/UI/Box.vue';
-     import HeroName from '../../Pages/Game/HeroName.vue'
+     import GameList from '@/Components/GameList.vue';  
+     import Box from '@/Components/UI/Box.vue';
+     import HeroName from '@/Pages/Game/HeroName.vue'
      import { route } from '../../../../vendor/tightenco/ziggy/src/js';
 
 
@@ -57,4 +66,8 @@
     const page= usePage()
     const flashSuccess = computed(
     () => page.props.flash.success,)
+
+    const user = computed(
+  () => page.props.user,
+)
 </script>
